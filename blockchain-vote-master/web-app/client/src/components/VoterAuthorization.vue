@@ -1,18 +1,10 @@
 <template>
-  <div class="posts">
-    <h1>Query By Key</h1>
-    <form v-on:submit="queryByKey">
-      <input type="text" v-model="input.key" placeholder="Enter Key to Query">
-      <br>
-
-      <input type="submit" value="Query">
-      <br>
-      <br>
-      <span v-if="input">
-        <b>{{ input.data }}</b>
-      </span>  
-      <br>
-    </form>
+  <div class="posts" style="margin: auto; background-color: #BBDFF6; color: black; height: 400px">
+    <h1>AI Based Authorization of Voter</h1>
+    <br>
+    <div class="cameraCaptureBlock">
+    <VueCamera />
+    </div>
 
     <br>
       <vue-instant-loading-spinner id='loader' ref="Spinner"></vue-instant-loading-spinner>
@@ -20,8 +12,7 @@
 </template>
 
 <script>
-import PostsService from "@/services/apiService";
-import VueInstantLoadingSpinner from 'vue-instant-loading-spinner/src/components/VueInstantLoadingSpinner.vue'
+import VueCamera from '@mrjeffapp/vuejs-camera'
 
 export default {
   name: "response",
@@ -34,7 +25,7 @@ export default {
   },
   name: 'app',
   components: {
-    VueInstantLoadingSpinner
+    VueCamera
   },
   methods: {
     async queryByKey() {

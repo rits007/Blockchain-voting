@@ -1,15 +1,17 @@
 <template>
-  <div class="posts">
-    <h1>2019 University Of Windsor Election</h1>
+  <div class="posts" style="margin: auto; background-color: #BBDFF6; color: black">
+      <h1>2019 University of Windsor Election</h1>
     <h3>If you are a registered voter, enter your voterId below</h3>
     <!--span><b>{{ response }}</b></span><br /-->
     <form v-on:submit="validateVoter">
-      <input type="text" v-model="loginData.voterId" placeholder="Enter VoterId">
+      <input type="text" v-model="loginData.voterId" placeholder="Enter VoterId" class="voterIDText">
       <br>
 
-      <input type="submit" value="Login">
+      <button type="submit" class="standardButton">
+        <span> Login </span>
+      </button>
       <br>
-      <br>
+
       <span v-if="loginReponse">
         <b>{{ loginReponse.data }}</b>
       </span>
@@ -18,17 +20,38 @@
 
     <br>
     <h3>Otherwise, fill out the form below to register!</h3>
+
+    <div style="padding: 5px; width: 500px; height: 250px; margin: auto; border: 2px solid black">
+    <span style="font-weight: bold">
+    <p> <u> VOTER REGISTRATION FORM </u> </p>
+    </span>
     <form v-on:submit="registerVoter">
-      <input type="text" v-model="registerData.voterId" placeholder="Enter Student ID">
-      <br>
-      <input type="text" v-model="registerData.registrarId" placeholder="Enter University">
-      <br>
-      <input type="text" v-model="registerData.firstName" placeholder="Enter first name">
-      <br>
-      <input type="text" v-model="registerData.lastName" placeholder="Enter last name">
-      <br>
-      <input type="submit" value="Register">
+      <p class="regVoterInput">
+      <label class="regVoterLabel"> LICENSE NUMBER </label>
+      <input type="text" v-model="registerData.voterId" placeholder="Enter Drivers License" class="standardInputText">
+      </p> <br>
+
+      <p class="regVoterInput">
+      <label class="regVoterLabel"> REGISTRAR ID </label>
+      <input type="text" v-model="registerData.registrarId" placeholder="Enter Registrar ID" class="standardInputText">
+      </p> <br>
+
+      <p class="regVoterInput">
+      <label class="regVoterLabel"> FIRST NAME </label>
+      <input type="text" v-model="registerData.firstName" placeholder="Enter first name" class="standardInputText">
+      </p> <br>
+
+      <p class="regVoterInput">
+      <label class="regVoterLabel"> LAST NAME </label>
+      <input type="text" v-model="registerData.lastName" placeholder="Enter last name" class="standardInputText">
+      </p> <br><br>
+
+      <button type="submit" class="standardButton">
+        <span> Register </span>
+      </button>
+
     </form>
+    </div>
     <br>
     <span v-if="registerReponse">
       <b>{{ registerReponse.data }}</b>

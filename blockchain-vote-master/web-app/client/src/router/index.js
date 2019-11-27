@@ -1,11 +1,12 @@
+
+
 import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from '@/components/Home'
 import CastBallot from '@/components/CastBallot'
-import QueryAll from '@/components/QueryAll'
-import QueryWithQueryString from '@/components/QueryWithQueryString'
-import QueryByKey from '@/components/QueryByKey'
+import UploadID from '@/components/UploadID'
+import VoterAuthorization from '@/components/VoterAuthorization'
 import GetCurrentStanding from '@/components/GetCurrentStanding'
 
 Vue.use(Router)
@@ -23,19 +24,14 @@ export default new Router({
       component: CastBallot
     },
     {
-      path: '/queryAll',
-      name: 'QueryAll',
-      component: QueryAll
+      path: '/uploadID',
+      name: 'UploadID',
+      component: UploadID
     },
     {
-      path: '/queryWithQueryString',
-      name: 'QueryWithQueryString',
-      component: QueryWithQueryString
-    },
-    {
-      path: '/queryByKey',
-      name: 'QueryByKey',
-      component: QueryByKey
+      path: '/voterAuthorization',
+      name: 'VoterAuthorization',
+      component: VoterAuthorization
     },
     {
       path: '/getCurrentStanding',
